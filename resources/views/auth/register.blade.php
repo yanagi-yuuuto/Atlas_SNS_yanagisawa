@@ -20,7 +20,7 @@
 
 {{ Form::submit('登録') }}
 
-<p><a href="/login">ログイン画面へ戻る</a></p>
+<p><a href="/login">ログイン画面へ戻らない</a></p>
 
 {!! Form::close() !!}
 
