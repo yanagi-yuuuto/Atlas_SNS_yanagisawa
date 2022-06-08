@@ -1,22 +1,162 @@
 @charset "utf-8";
-html{
+
+
+body {
+    height: 950px;
 }
-body{
+
+a {
+    color: #fff;
+    text-decoration: none;
 }
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+
 /* header */
-header{
-    background:#186AC9;
+header {
+    background: #186AC9;
+    height: 10%;
+}
+
+#head {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 img {
+    width: 120px;
+    margin-left: 18px;
+    margin-top: 10px;
+}
+
+#menu {
+    flex: 0 0 20%;
+}
+
+#profile {
+    padding-top: 31px;
+    display: flex;
+    height: 95px;
+    justify-content: space-around;
+    position: relative;
+    z-index: 3;
+    background-color: #186AC9;
+}
+
+#profile p {
+    color: #fff;
+}
+
+#profile .arrow {
+    color: #fff;
+    transform: rotate(90deg);
+    position: relative;
+    bottom: 11px;
+}
+
+#profile .arrow .active {
+    transform: rotate(-90deg);
+    position: relative;
+    bottom: 11px;
+    left: 22px;
+}
+
+#profile img {
+    height: 45px;
+}
+
+.drop-menu {
+    background-color: #fff;
+    border: 3px solid #00297E;
+    height: 500px;
+    width: 338px;
+    position: relative;
+    z-index: 2;
+    transform: translateY(-100%);
+}
+
+.drop-menu .active {
+    transform: translateY(100%);
+    transition: 1s;
+}
+
+ul {
+    height: 500px;
+}
+
+.drop-menu li {
+    height: 33%;
+    border-bottom: 3px solid #00297E;
+
+}
+
+.drop-menu a {
+    text-align: center;
+    display: block;
+    height: 100%;
+    color: black;
+    transition: 1s;
+    padding: 62px 0px;
+}
+
+.drop-menu li a:hover {
+    background-color: #00297E;
+    color: #fff;
+}
+
+.drop-menu li:last-child {
+    border-bottom: none;
 }
 
 /* main content */
-#row{
+#row {
     display: flex;
     flex-flow: row wrap;
+    height: 90%;
 }
-#container{
+
+#container {
+    height: auto;
     flex: 0 0 80%;
 }
-#side-bar{
-    flex: 0 0 19%;
+
+#side-bar {
+    height: auto;
+    flex: 0 0 20%;
     border-left: 1px solid #727272;
+    position: relative;
+    z-index: 1;
 }
+
+#confirm {
+    height: 500px;
+    padding: 82px 27px;
+    border-bottom: 1px solid #727272;
+}
+
+
+#confirm .follows {
+    display: flex;
+    justify-content: space-between;
+}
+
+#confirm .followed {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-search {
+    margin: 57px 0px 0px 99px;
+}
+
+/* #confirm {
+    padding-left: 30px;
+}
+
+/* #confirm p {
+    font-size: 0.8rem;
+} */
