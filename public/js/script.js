@@ -1,12 +1,43 @@
+$(function () {
+  alert('hello world')
+});
 
+// $(function () {
+//   $('.menu-arrow').on("click", function () {
+//     $(".drop-menu").slideToggle();
+//     if ($(".drop-menu").slideToggle()) {
+//       $(".arrow").addClass('active');
+//     } else {
+//       $(this).removeClass('active');
+//     }
+//   });
+// });
+
+
+// $(function () {
+//   $(".arrow").click(function () {
+//     $(".drop-menu").slideToggle();
+//   });
+// });
+
+// $(function () {
+//   $('.menu-arrow').click(function () {
+//     $(".arrow").css({ "transform": "rotate(270deg)", "height": "50px" });
+//     $(".drop-menu").slideToggle();
+//   });
+// });
+
+
+// $(function () {
+//   $('.menu-arrow').click(function () {
+//     // $(".arrow").css({ "transform": "rotate(270deg)", "height": "50px" });
+//     $(".drop-menu").slideToggle();
+//   });
+// });
 
 $(function () {
-  $('#profile .arrow').click(function () {        //ハンバーガーボタン（.menu-trigger）をタップすると、
-    $(this).toggleClass('active');              //タップしたハンバーガーボタン（.menu-trigger）に（.active）を追加・削除する。
-    if ($(this).hasClass('active')) {           //もし、ハンバーガーボタン（.menu-trigger）に（.active）があれば、
-      $('.drop-menu').addClass('active');          //(.g-navi)にも（.active）を追加する。
-    } else {                                    //それ以外の場合は、
-      $('.drop-menu').removeClass('active');       //(.g-navi)にある（.active）を削除する。
-    }
+  $('.arrow').click(function () {
+    $(".arrow").addClass("upper");
+    $(".drop-menu").slideToggle();
   });
 });
