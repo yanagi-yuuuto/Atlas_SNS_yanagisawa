@@ -26,10 +26,7 @@
           <h1><a href="/top"><img src="images/atlas.png"></a></h1>
             <div id="menu">
                 <div id="profile">
-                    <p>{{ Auth::user()->username }}<span>　</span>さん</p>
-                    <div class="arrow">
-                     <a href="#">></a>
-                    </div>
+                    <p class="arrow">{{ Auth::user()->username }}<span>　</span>さん</p>
                     <img src="images/icon1.png">
                 </div>
                 <div class="drop-menu">

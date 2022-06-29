@@ -12,10 +12,30 @@ class postsSeeder extends Seeder
     public function run()
     {
         DB::table('posts')->insert([
-              ['post' => '投稿内容1'],
-              ['post' => '投稿内容2'],
-              ['post' => '投稿内容3'],
-              ['post' => '投稿内容4']
+              // [
+              //   'user_id' => '1',
+              //   'post' => 'user1の投稿です。'
+              // ],
+              // [
+              //   'user_id' => '1',
+              //   'post' => 'user1の二番目の投稿です。'
+              // ],
+              // [
+              //   'user_id' => '1',
+              //   'post' => 'user1の三番目の投稿です。'
+              // ],
+              // [
+              //   'user_id' => '2',
+              //   'post' => 'user2の投稿です。'
+              // ],
+              // [
+              //   'user_id' => '3',
+              //   'post' => 'user3の投稿です。'
+              // ],
+              // [
+              //   'user_id' => '4',
+              //   'post' => 'user4の投稿です。'
+              // ]
             ]);
     }
 }
