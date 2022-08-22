@@ -27,7 +27,7 @@
             <div id="menu">
                 <div id="profile">
                     <p class="arrow">{{ Auth::user()->username }}<span>　</span>さん</p>
-                    <img src="images/icon1.png">
+                    <img src="images/icon1.png" class="icon">
                 </div>
                 <div class="drop-menu">
                 <ul>

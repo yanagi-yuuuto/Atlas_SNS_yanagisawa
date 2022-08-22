@@ -3,7 +3,7 @@
 @section('content')
 
 <div id="clear">
-  <p>{{ Session::get('user-name') }}さん</p>
+  <p>{{ Session::get('user-name') }}<span>　</span>さん</p>
   <p>ようこそ！AtlasSNSへ！</p>
   <p>ユーザー登録が完了しました。</p>
   <p>早速ログインをしてみましょう。</p>

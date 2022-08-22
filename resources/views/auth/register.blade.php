@@ -8,6 +8,9 @@
 
 {{ Form::label('user name') }}
 {{ Form::text('username',null,['class' => 'input']) }}
+@if ($errors->has('username'))
+  <p>{{$errors->first('username')}}</p>
+@endif
 
 {{ Form::label('mail adress') }}
 {{ Form::email('mail',null,['class' => 'input']) }}
@@ -16,7 +19,7 @@
 {{ Form::password('password',['class' => 'input']) }}
 
 {{ Form::label('password-confirm') }}
-{{ Form::password('password-confirm',['class' => 'input']) }}
+{{ Form::password('password_confirmation',['class' => 'input']) }}
 
 <div class="submit">
 {{ Form::submit('REGISTER',['class' => 'submit btn btn-danger']) }}

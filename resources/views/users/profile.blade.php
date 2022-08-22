@@ -14,7 +14,7 @@
 {{ Form::label('user name') }}
 {{ Form::text('username',null,['class' => 'input']) }}
 
-{{ Form::label('mail adress') }}
+<!-- {{ Form::label('mail adress') }}
 {{ Form::email('mail',null,['class' => 'input']) }}
 
 {{ Form::label('password') }}
@@ -27,7 +27,7 @@
 {{ Form::text('bio',null,['class' => 'input']) }}
 
 {{ Form::label('icon image') }}
-{{ Form::file('image',null,['class' => 'input']) }}
+{{ Form::file('image',null,['class' => 'input']) }} -->
 
 {{ Form::submit('更新',['class' => 'submit btn btn-danger']) }}
 
