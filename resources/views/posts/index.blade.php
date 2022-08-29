@@ -29,7 +29,7 @@
          <p> {{ $post->created_at }}</p>
          <div class="edits-image">
             <div class="edits-edit">
-               <a href="" post="{{ $post->post }}" post_id="{{ $post->id }}"><img src="images/edit.png"></a>
+               <a href="" post="{{ $post->post }}" post_id="{{ $post->id }}" class="js-modal-open"><img src="images/edit.png"></a>
             </div>
             <div class="edits-trash">
                <a href=""><img src="images/trash.png"></a>
@@ -45,10 +45,10 @@
     <div class="modal js-modal">
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
-           <form action="" method="">
-                <textarea name="" class="modal_post"></textarea>
-                <input type="hidden" name="" class="modal_id" value="">
-                <input type="submit" value="更新">
+           <form action="/top/update" method="post">
+                <textarea name="update-post" maxlength="150" required class="modal_post"></textarea>
+                <input type="hidden" name="update-id" class="modal_id" value="">
+                <input type="image" src="images/edit.png" class="edits-update">
                 {{ csrf_field() }}
            </form>
            <a class="js-modal-close" href="">閉じる</a>

@@ -195,6 +195,7 @@ ul {
     height: 160px;
     width: 800px;
     margin-top: 50px;
+    border: none;
 }
 
 .submit-image {
@@ -203,7 +204,6 @@ ul {
 
 textarea {
     resize: none;
-    border: none;
 }
 
 textarea:focus {
@@ -272,6 +272,12 @@ textarea:focus {
     width: 100%;
 }
 
+.modal_post {
+    width: 878px;
+    height: 250px;
+    margin-top: 1px;
+}
+
 .modal__bg {
     background: rgba(0, 0, 0, 0.8);
     height: 100vh;
@@ -282,9 +288,17 @@ textarea:focus {
 .modal__content {
     background: #fff;
     left: 50%;
-    padding: 40px;
+    padding: 80px;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
+    border-radius: 15px;
+}
+
+.edits-update {
+    height: 40px;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
 }
