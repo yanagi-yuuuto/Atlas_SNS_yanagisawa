@@ -11,8 +11,11 @@ use Illuminate\Http\Request;
 class PostsController extends Controller
 {
     public function index(){
-        $posts = Post::with('User')->get();
-        return view('posts.index', compact('posts'));
+        $user_id = Auth::id();
+        $login_user = Auth::user();
+        $following_id = Auth::user()->follows()->pluck('followed_id');
+        $posts = Post::with('user')->whereIn('posts.user_id', $following_id)->get();
+        return view('posts.index', compact('user_id','login_user','post'));
     }
 
     public function store(Request $request){
@@ -37,8 +40,18 @@ class PostsController extends Controller
     public function update(Request $request){
         $update_post = $request->input('update-post');
         $update_id = $request->input('update-id');
-        Post::where('id')->update($update_post);
-        Post::where('id')->update($update_id);
+        \DB::table('posts')
+            ->where('id', $update_id)
+            ->update(
+                ['post' => $update_post]
+            );
+        return redirect('/top');
+    }
+
+    public function delete($id){
+        \DB::table('posts')
+            ->where('id', $id)
+            ->delete();
         return redirect('/top');
     }
 }

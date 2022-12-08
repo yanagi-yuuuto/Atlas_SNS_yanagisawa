@@ -165,24 +165,10 @@ ul {
     margin: 57px 0px 0px 99px;
 }
 
-/* プロフィール編集 */
-
-#profile-edit {
-    display: flex;
-}
-
-#icon-image {
-    width: 400px;
-}
-
-#edit-form {
-    width: 800px;
-    display: flex;
-}
-
 /* 投稿画面 */
 #post-area img {
     height: 60px;
+    width: 60px;
     margin: 43px 50px 0px 140px;
 }
 
@@ -210,6 +196,15 @@ textarea:focus {
     outline: 0;
 }
 
+.errors {
+    font-size: 0.75rem;
+    color: red;
+    margin-bottom: 0px;
+    position: relative;
+    bottom: -160px;
+    left: 16px;
+}
+
 /* 投稿一覧 */
 
 .post-lineup {
@@ -226,6 +221,7 @@ textarea:focus {
 
 .lineup-icon img {
     height: 60px;
+    width: 60px;
 }
 
 .lineup-post {
@@ -237,25 +233,31 @@ textarea:focus {
     margin-left: 148px;
 }
 
-.edits-image {
-    padding-left: 90px;
-    display: flex;
-}
-
-.edits-image img {
+.edits-edit img {
     height: 40px;
+    position: absolute;
+    right: 112px;
+    bottom: 30px;
 }
 
-.edits-edit {
+.edits-trash .trash {
+    height: 40px;
     position: absolute;
-    right: 90px;
-    bottom: 20px;
+    right: 48px;
+    bottom: 32px;
 }
 
-.edits-trash img {
+.edits-trash .trash-hover {
+    height: 77px;
     position: absolute;
-    right: 40px;
-    bottom: 20px;
+    right: 31px;
+    bottom: 13px;
+    opacity: 0;
+}
+
+.edits-trash .trash-hover:hover {
+    opacity: 1;
+    transition: 1s;
 }
 
 /* モーダル */
@@ -301,4 +303,173 @@ textarea:focus {
     position: absolute;
     right: 50px;
     bottom: 50px;
+}
+
+/* プロフィール編集 */
+
+#profile-edit {
+    position: absolute;
+    width: 1200px;
+    display: flex;
+    margin-left: 150px;
+}
+
+
+#icon-image img {
+    position: relative;
+    left: 82px;
+    top: 62px;
+    height: 64px;
+    width: 64px;
+}
+
+#edit-form {
+    display: flex;
+    margin-left: 150px;
+    padding-top: 50px;
+}
+
+.profile-label {
+    display: flex;
+    flex-flow: column;
+}
+
+.profile-data {
+    display: flex;
+    flex-flow: column;
+    margin-left: 80px;
+}
+
+.input-profile {
+    margin: 29px 0px;
+    background-color: #E1E1E1;
+    border: 1px solid #878787;
+    width: 480px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.input-label {
+    margin: 31px 0px;
+}
+
+.upload-button {
+    position: relative;
+    left: 415px;
+    bottom: -40px;
+    width: 200px;
+}
+
+.input-file {
+    margin-top: 22px;
+    width: 480px;
+    height: 126px;
+    border: 1px solid #878787;
+    background-color: #E1E1E1;
+}
+
+.input-file p {
+    background-color: #fff;
+    color: #ccc;
+    cursor: pointer;
+    width: 229px;
+    text-align: center;
+    margin: 29px 0px 0px 121px;
+}
+
+.input-file span {
+    color: #878787;
+}
+
+.profile-error {
+    font-size: 0.35rem;
+    color: red;
+    margin: -10px 0px -6px 0px;
+}
+
+/* 検索ページ */
+
+#search-area {
+    height: 200px;
+    width: auto;
+    border-bottom: 5px solid #cccccc;
+    display: flex;
+}
+
+.search-box {
+    width: 900px;
+    height: auto;
+    padding-top: 45px;
+    padding-left: 75px;
+    position: absolute;
+}
+
+.keyword-box {
+    border: 3px solid #727272;
+    border-radius: 5px;
+    width: 392px;
+    height: 56px;
+}
+
+.search-button {
+    position: relative;
+    height: 61px;
+    top: 20px;
+    left: -6px;
+}
+
+.search-word {
+    position: relative;
+    left: 565px;
+    bottom: 48px;
+}
+
+/* ユーザー検索結果 */
+/* 一覧 */
+
+#user-lineup {
+    display: flex;
+    margin: 30px 0px 30px 350px;
+}
+
+.user-name {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.follow-button {
+    position: relative;
+    top: 11px;
+    left: 389px;
+}
+
+/* フォロー・フォロワーリスト */
+#ff-listbox {
+    height: 200px;
+    width: 1352px;
+    border-bottom: 5px solid #cccccc;
+    display: flex;
+}
+
+.ff-title {
+    margin-left: 150px;
+    margin-top: 50px;
+}
+
+.ff-title p {
+    font-size: 1.5rem;
+}
+
+.ff-icon {
+    height: 50px;
+    width: 50px;
+    margin-top: 42px;
+    margin-left: 30px;
+}
+
+.ff-postbox {
+    width: 1352px;
+    height: auto;
 }

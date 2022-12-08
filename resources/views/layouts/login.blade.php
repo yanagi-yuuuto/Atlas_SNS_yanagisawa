@@ -27,7 +27,7 @@
             <div id="menu">
                 <div id="profile">
                     <p class="arrow">{{ Auth::user()->username }}<span>　</span>さん</p>
-                    <img src="images/icon1.png" class="icon">
+                    <img src="{{ asset('/storage/' . Auth::user()->images) }}"  class="icon">
                 </div>
                 <div class="drop-menu">
                 <ul>
@@ -48,12 +48,12 @@
                 <p>{{ Auth::user()->username }}<span>　</span>さんの</p>
                 <div class="follows">
                 <p>フォロー数</p>
-                <p>名</p>
+                <p>{{ Auth::user()->follows()->get()->count() }}人</p>
                 </div>
                 <p class="btn btn-primary btn-sm"><a href="/follow-List">フォローリスト</a></p>
                 <div class="followed">
                 <p>フォロワー数</p>
-                <p>名</p>
+                <p>{{ Auth::user()->followers()->get()->count() }}人</p>
                 </div>
                 <p class="btn btn-primary btn-sm"><a href="/follower-List">フォロワーリスト</a></p>
             </div>

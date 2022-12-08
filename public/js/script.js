@@ -30,3 +30,8 @@ $(function () {
     return false;
   });
 });
+
+$('input').on('change', function () {
+  var file = $(this).prop('files')[0];
+  $('.files-name').text(file.name);
+});

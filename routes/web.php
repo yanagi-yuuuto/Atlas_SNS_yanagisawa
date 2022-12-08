@@ -34,13 +34,20 @@ Route::post('/added', 'Auth\RegisterController@added');
 Route::get('/top','PostsController@index');
 Route::post('/top','PostsController@store');
 Route::post('/top/update','PostsController@update');
+Route::get('/top/{id}/delete','PostsController@delete');
 
 Route::get('/profile','UsersController@profile');
+Route::post('/profile','UsersController@update');
 
 Route::get('/search','UsersController@search');
+Route::get('/search','UsersController@result');
+Route::get('/search/{id}/follow_link','UsersController@follow');
+Route::get('/search/{id}/unfollow_link','UsersController@unfollow');
 
 Route::get('/follow-List','FollowsController@followList');
 Route::get('/follower-List','FollowsController@followerList');
+
+Route::get('/user_profile/{id}','UsersController@userProfile');
 
 Route::get('/logout','Auth\LoginController@logout');
 // });

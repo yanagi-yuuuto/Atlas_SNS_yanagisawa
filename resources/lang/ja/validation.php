@@ -82,7 +82,7 @@ return [
         'string'  => 'The :attribute must be :size characters.',
         'array'   => 'The :attribute must contain :size items.',
     ],
-    'string'               => 'The :attribute must be a string.',
+    'string'               => '有効な文字列を入力して下さい。',
     'timezone'             => 'The :attribute must be a valid zone.',
     'unique'               => '既に登録されているものは使用できません。',
     'uploaded'             => 'The :attribute failed to upload.',

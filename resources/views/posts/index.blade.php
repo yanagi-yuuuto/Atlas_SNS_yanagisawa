@@ -3,7 +3,7 @@
 @section('content')
 
 <div id="post-area">
-  <img src="images/icon1.png">
+  <img src="{{ asset('/storage/' . $login_user->images) }}" >
 
   {!! Form::open(['url' => '/top']) !!}
 
@@ -11,6 +11,9 @@
   {{ Form::image('images/post.png','submit',['class' => 'submit-image']) }}
 
   {!! Form::close() !!}
+  @if ($errors->has('post'))
+  <p class="errors">{{$errors->first('post')}}</p>
+  @endif
 
   </div>
 
@@ -19,7 +22,7 @@
   <tr class="lineup-area">
    <td>
       <div class="lineup-icon">
-         <img src="images/icon1.png" >
+         <img src="{{ asset('/storage/' . $post->user->images) }}" >
       </div>
       <div class="lineup-post">
           <p>{{ $post->user->username }}</p>
@@ -27,14 +30,19 @@
       </div>
       <div class="lineup-date">
          <p> {{ $post->created_at }}</p>
+        @if($user_id == $post->user->id)
          <div class="edits-image">
             <div class="edits-edit">
                <a href="" post="{{ $post->post }}" post_id="{{ $post->id }}" class="js-modal-open"><img src="images/edit.png"></a>
             </div>
             <div class="edits-trash">
-               <a href=""><img src="images/trash.png"></a>
+               <a href="/top/{{ $post->id }}/delete"  onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">
+               <img class="trash" src="images/trash.png">
+               <img class="trash-hover" src="images/trash-h.png">
+               </a>
             </div>
          </div>
+        @endif
       </div>
    </td>
   </tr>

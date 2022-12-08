@@ -16,26 +16,26 @@ class postsSeeder extends Seeder
                 'user_id' => '1',
                 'post' => 'user1の投稿です。'
               ],
-              // [
-              //   'user_id' => '1',
-              //   'post' => 'user1の二番目の投稿です。'
-              // ],
-              // [
-              //   'user_id' => '1',
-              //   'post' => 'user1の三番目の投稿です。'
-              // ],
-              // [
-              //   'user_id' => '2',
-              //   'post' => 'user2の投稿です。'
-              // ],
-              // [
-              //   'user_id' => '3',
-              //   'post' => 'user3の投稿です。'
-              // ],
-              // [
-              //   'user_id' => '4',
-              //   'post' => 'user4の投稿です。'
-              // ]
+              [
+                'user_id' => '1',
+                'post' => 'user1の二番目の投稿です。'
+              ],
+              [
+                'user_id' => '1',
+                'post' => 'user1の三番目の投稿です。'
+              ],
+              [
+                'user_id' => '2',
+                'post' => 'user2の投稿です。'
+              ],
+              [
+                'user_id' => '3',
+                'post' => 'user3の投稿です。'
+              ],
+              [
+                'user_id' => '4',
+                'post' => 'user4の投稿です。'
+              ]
             ]);
     }
 }

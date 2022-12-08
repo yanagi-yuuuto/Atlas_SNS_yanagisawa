@@ -6,9 +6,9 @@
 
 <p>AtlasSNSへようこそ</p>
 
-{{ Form::label('mail adress') }}
+{{ Form::label('mail adress','mail adress') }}
 {{ Form::text('mail',null,['class' => 'input']) }}
-{{ Form::label('password') }}
+{{ Form::label('password','password') }}
 {{ Form::password('password',['class' => 'input']) }}
 <div class="submit">
 {{ Form::submit('LOGIN',['class' => 'btn btn-danger']) }}

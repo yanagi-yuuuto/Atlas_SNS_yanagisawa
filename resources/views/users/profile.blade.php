@@ -4,35 +4,45 @@
 
 <div id="profile-edit">
 
-<div id="icon-image">
-<img src="images/icon1.png">
+ <div id="icon-image">
+ <img src="{{ asset('/storage/' . $user->images) }}" >
+ </div>
+
+
+ {!! Form::open(['url' => '/profile' , 'files' => true]) !!}
+  <div id="edit-form">
+    <div class="profile-label">
+     {{ Form::label('username','user name',['class' => 'input-label']) }}
+     {{ Form::label('mail','mail address',['class' => 'input-label']) }}
+     {{ Form::label('password','password',['class' => 'input-label']) }}
+     {{ Form::label('password-confirm','password confirm',['class' => 'input-label']) }}
+     {{ Form::label('bio','bio',['class' => 'input-label']) }}
+     {{ Form::label('icon image','icon image',['class' => 'input-label']) }}
+    </div>
+
+    <div class="profile-data">
+     {{ Form::text('username',$user->username,['class' => 'input-profile']) }}
+     @if ($errors->has('username'))
+      <p class="profile-error">{{$errors->first('username')}}</p>
+     @endif
+     {{ Form::email('mail',$user->mail,['class' => 'input-profile']) }}
+     @if ($errors->has('mail'))
+      <p class="profile-error">{{$errors->first('mail')}}</p>
+     @endif
+     {{ Form::password('password',['class' => 'input-profile']) }}
+     {{ Form::password('password_confirmation',['class' => 'input-profile']) }}
+     @if ($errors->has('password'))
+     <p class="profile-error">{{$errors->first('password')}}</p>
+     @endif
+     {{ Form::text('bio',$user->bio,['class' => 'input-profile']) }}
+     <label class="input-file">
+     {{ Form::file('image') }} <p>ファイルを選択</p><div style="text-align: center;"><span class="files-name">選択されていません</span></div>
+     </label>
+    </div>
+  </div>
+ {{ Form::submit('更新',['class' => 'submit btn btn-danger upload-button']) }}
+ {!! Form::close() !!}
 </div>
 
-<div id="edit-form">
-{!! Form::open(['url' => '/profile']) !!}
 
-{{ Form::label('user name') }}
-{{ Form::text('username',null,['class' => 'input']) }}
-
-<!-- {{ Form::label('mail adress') }}
-{{ Form::email('mail',null,['class' => 'input']) }}
-
-{{ Form::label('password') }}
-{{ Form::password('password',['class' => 'input']) }}
-
-{{ Form::label('password confirm') }}
-{{ Form::password('password-confirm',['class' => 'input']) }}
-
-{{ Form::label('bio') }}
-{{ Form::text('bio',null,['class' => 'input']) }}
-
-{{ Form::label('icon image') }}
-{{ Form::file('image',null,['class' => 'input']) }} -->
-
-{{ Form::submit('更新',['class' => 'submit btn btn-danger']) }}
-
-{!! Form::close() !!}
-</div>
-
-</div>
 @endsection
