@@ -7,7 +7,7 @@
   </div>
   @foreach($users as $user)
   <div class="ff-icon">
-    <a href="/user_profile/{id}">
+    <a href="/user_profile/{{ $user->id }}">
      <img src="{{ asset('/storage/' . $user->images) }}" >
     </a>
   </div>

@@ -17,7 +17,7 @@
 
   </div>
 
-   @foreach($posts as $post)
+@foreach($posts as $post)
  <div class="post-lineup">
   <tr class="lineup-area">
    <td>
@@ -47,7 +47,7 @@
    </td>
   </tr>
  </div>
-  @endforeach
+ @endforeach
 
    <!-- モーダルの中身 -->
     <div class="modal js-modal">

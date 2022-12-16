@@ -48,6 +48,8 @@ Route::get('/follow-List','FollowsController@followList');
 Route::get('/follower-List','FollowsController@followerList');
 
 Route::get('/user_profile/{id}','UsersController@userProfile');
+Route::get('/user_profile/{id}/follow_link','UsersController@follow');
+Route::get('/user_profile/{id}/unfollow_link','UsersController@unfollow');
 
 Route::get('/logout','Auth\LoginController@logout');
 // });

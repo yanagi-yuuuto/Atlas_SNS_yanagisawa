@@ -23,10 +23,10 @@
 <body>
     <header>
         <div id = "head">
-          <h1><a href="/top"><img src="images/atlas.png"></a></h1>
+          <h1><a href="/top"><img src="{{ asset('images/atlas.png') }}"></a></h1>
             <div id="menu">
                 <div id="profile">
-                    <p class="arrow">{{ Auth::user()->username }}<span>　</span>さん</p>
+                    <p class="arrow">{{ Auth::user()->username }}さん</p>
                     <img src="{{ asset('/storage/' . Auth::user()->images) }}"  class="icon">
                 </div>
                 <div class="drop-menu">

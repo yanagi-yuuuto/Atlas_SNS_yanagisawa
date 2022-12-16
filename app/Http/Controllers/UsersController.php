@@ -38,34 +38,31 @@ class UsersController extends Controller
         $update_username = $request->input('username');
         \DB::table('users')
             ->where('id', Auth::id())
-            ->update(
-                ['username' => $update_username]
-            );
+            ->update(['username' => $update_username]);
+
         $update_mail = $request->input('mail');
         \DB::table('users')
             ->where('id', Auth::id())
-            ->update(
-                ['mail' => $update_mail]
-            );
+            ->update(['mail' => $update_mail]);
+
         $update_password = $request->input('password');
         \DB::table('users')
             ->where('id', Auth::id())
-            ->update(
-                ['password' => $update_password]
-            );
+            ->bcrypt($update_password)
+            ->update(['password' => $update_password]);
+
+
         $update_bio = $request->input('bio');
         \DB::table('users')
             ->where('id', Auth::id())
-            ->update(
-                ['bio' => $update_bio]
-            );
+            ->update(['bio' => $update_bio]);
+
         $image_path = $request->file('image')->store('/public');
         $update_image = basename($image_path);
         \DB::table('users')
             ->where('id', Auth::id())
-            ->update(
-                ['images' => $update_image]
-            );
+            ->update(['images' => $update_image]);
+
         return redirect('/top');
     }
 
@@ -95,8 +92,19 @@ class UsersController extends Controller
 
     public function unfollow($id){
         \DB::table('follows')
-            ->where('id', $id)
+            ->where([
+                ['followed_id' , $id ],
+                ['following_id' , Auth::id()]
+            ])
             ->delete();
         return back();
+    }
+
+    public function userProfile($id) {
+        $user = User::find($id);
+        $user_id = Auth::id();
+        $login_user = Auth::user();
+        $posts = User::find($id)->posts()->get();
+        return view('users.userProfile' , compact('user','login_user','user_id','posts'));
     }
 }
