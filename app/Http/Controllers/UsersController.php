@@ -48,7 +48,6 @@ class UsersController extends Controller
         $update_password = $request->input('password');
         \DB::table('users')
             ->where('id', Auth::id())
-            ->bcrypt($update_password)
             ->update(['password' => $update_password]);
 
 
