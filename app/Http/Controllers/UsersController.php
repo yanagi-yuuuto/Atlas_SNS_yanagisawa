@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 
+
 class UsersController extends Controller
 {
     //
@@ -21,11 +22,11 @@ class UsersController extends Controller
     public function update(Request $request) {
 
         $validator = Validator::make($request->all(), [
-          'username' => 'required|string|min:2|max:12',
-          'mail' => 'required|string|email|min:5|max:40|unique:users',
-          'password' => 'required|string|alpha_num|min:8|max:20|confirmed',
-          'bio' => 'string|max:150',
-          'image' => 'image',
+        //   'username' => 'required|string|min:2|max:12',
+          'mail' => 'required|string|email|min:5|max:40|Rule::unique('users')->ignore($this->user->id)',
+        //   'password' => 'required|string|alpha_num|min:8|max:20|confirmed',
+        //   'bio' => 'string|max:150',
+        //   'image' => 'image',
         ]);
 
         if ($validator->fails()) {
@@ -46,21 +47,23 @@ class UsersController extends Controller
             ->update(['mail' => $update_mail]);
 
         $update_password = $request->input('password');
+        $update_password = bcrypt('password');
         \DB::table('users')
             ->where('id', Auth::id())
             ->update(['password' => $update_password]);
-
 
         $update_bio = $request->input('bio');
         \DB::table('users')
             ->where('id', Auth::id())
             ->update(['bio' => $update_bio]);
 
+        if($request->image){
         $image_path = $request->file('image')->store('/public');
         $update_image = basename($image_path);
         \DB::table('users')
             ->where('id', Auth::id())
             ->update(['images' => $update_image]);
+        }
 
         return redirect('/top');
     }

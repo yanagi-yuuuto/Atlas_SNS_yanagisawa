@@ -469,10 +469,13 @@ input[type="file"] {
 }
 
 .ff-icon {
-    height: 50px;
-    width: 50px;
     margin-top: 42px;
     margin-left: 30px;
+}
+
+.ff-icon img {
+    height: 50px;
+    width: 50px;
 }
 
 .ff-postbox {
